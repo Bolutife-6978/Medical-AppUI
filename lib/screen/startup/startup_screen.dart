@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
+import 'package:flutter_medical/screen/welcome/welcome_screen.dart';
 
 import '../../widget/header_logo.dart';
 import '../../widget/my_header.dart';
@@ -42,12 +43,23 @@ class StartupScreen extends StatelessWidget {
                 Text(
                   'Lorem ipsum dolor sit amet, consecteur \n'
                   'adipiscing elit, sed diam nomuney nibh euismod ',
+                  textAlign: TextAlign.center,
                   style: TextStyle(color: nTitleTextColor),
                 ),
+                Spacer(),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(36),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return WelcomeScreen();
+                          },
+                        ),
+                      );
+                    },
                     child: Text(
                       "Book Now",
                       style: TextStyle(fontSize: 22),
@@ -58,11 +70,12 @@ class StartupScreen extends StatelessWidget {
                         foregroundColor:
                             MaterialStateProperty.all(Colors.white),
                         backgroundColor:
-                            MaterialStateProperty.all(Color(0xFF25257E)),
+                            MaterialStateProperty.all(Color(0xFF5063FF)),
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)))),
                   ),
-                )
+                ),
+                Spacer(),
               ],
             ),
           ))
